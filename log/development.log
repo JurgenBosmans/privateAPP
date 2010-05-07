@@ -1,0 +1,65 @@
+
+
+Processing NotitiesController#index (for 127.0.0.1 at 2010-05-07 15:21:59) [GET]
+Rendering notities/index
+Completed in 57ms (View: 56, DB: 0) | 200 OK [http://localhost/notities]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNotities (20100507132130)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "notities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "omschrijving" varchar(255), "trefwoord" varchar(255), "gebruiker" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100507132130')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("notities")[0m
+
+
+Processing NotitiesController#index (for 127.0.0.1 at 2010-05-07 15:26:37) [GET]
+  [4;36;1mNotitie Load (0.3ms)[0m   [0;1mSELECT * FROM "notities" [0m
+Rendering template within layouts/application
+Rendering notities/index
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://localhost/notities]
+
+
+Processing NotitiesController#new (for 127.0.0.1 at 2010-05-07 15:26:42) [GET]
+Rendering template within layouts/application
+Rendering notities/new
+Completed in 35ms (View: 31, DB: 0) | 200 OK [http://localhost/notities/new]
+
+
+Processing NotitiesController#create (for 127.0.0.1 at 2010-05-07 15:26:52) [POST]
+  Parameters: {"commit"=>"Opslaan", "authenticity_token"=>"RHTy3OHvcesrL8ZvHESjY2YA9LJCtuwKeDwcrR3zD+s=", "notitie"=>{"trefwoord"=>"test", "omschrijving"=>"test"}}
+  [4;35;1mNotitie Create (0.3ms)[0m   [0mINSERT INTO "notities" ("trefwoord", "created_at", "gebruiker", "updated_at", "omschrijving") VALUES('test', '2010-05-07 13:26:52', NULL, '2010-05-07 13:26:52', 'test')[0m
+Redirected to http://localhost:3000/notities
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/notities]
+
+
+Processing NotitiesController#index (for 127.0.0.1 at 2010-05-07 15:26:52) [GET]
+  [4;36;1mNotitie Load (0.4ms)[0m   [0;1mSELECT * FROM "notities" [0m
+Rendering template within layouts/application
+Rendering notities/index
+Completed in 108ms (View: 104, DB: 0) | 200 OK [http://localhost/notities]
+
+
+Processing NotitiesController#show (for 127.0.0.1 at 2010-05-07 15:27:05) [GET]
+  Parameters: {"id"=>"show"}
+  [4;35;1mNotitie Load (0.4ms)[0m   [0mSELECT * FROM "notities" ORDER BY notities.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering notities/show
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://localhost/notities/show]

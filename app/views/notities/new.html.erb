@@ -1,0 +1,14 @@
+<%= error_messages_for 'notitie' %>
+
+<% form_for @notitie do |f| %> 
+	<p>
+		Notitie:<br />
+		<%= f.text_area :omschrijving, :size => "30x10" %> 
+	</p>
+	<p> 
+		Trefwoord:<br /> 
+		<%= f.text_field :trefwoord %>
+	</p> 
+	<p>
+		<%= submit_tag 'Opslaan' %> </p>
+<% end %>

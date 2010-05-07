@@ -1,0 +1,16 @@
+<h1>Notities</h1>
+
+<table>
+	<tr>
+		<th>Notitie</th>
+		<th>Trefwoord</th>
+		<th>Aangemaakt op</th>
+	</tr>
+	<% @notities.each do |notitie|%>
+	<tr>
+		<td><%= h notitie.omschrijving %></td>
+		<td><%= h notitie.trefwoord %></td>
+		<td><%= h notitie.updated_at %></td>
+	</tr>
+	<% end%>
+</table>

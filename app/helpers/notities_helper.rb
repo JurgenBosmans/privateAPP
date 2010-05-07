@@ -1,0 +1,2 @@
+module NotitiesHelper
+end
